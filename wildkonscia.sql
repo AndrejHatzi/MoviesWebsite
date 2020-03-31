@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 26, 2020 at 09:45 PM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Mar 31, 2020 at 05:40 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -45,8 +45,10 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`ID`, `title`, `genre`, `author`, `main_story`, `enjoyment`, `writing`, `score`, `image`) VALUES
-(1, 'Call me by your name (2007)', 'coming of age, romance, drama', 'André aciman', 5, 5, 5, 5, 'https://wildkonscia.tk/wp-content/uploads/2018/09/ImageHandler.ashx_.jpg'),
-(2, 'The Great Gatsby (1925)', 'Romance', 'Francis Fitzgerald ', 4, 5, 5, 5, 'gatsby.jpg');
+(1, 'Call me by your name (2007)', 'Coming of age, Romance, Drama', 'André aciman', 5, 5, 5, 5, 'https://wildkonscia.tk/wp-content/uploads/2018/09/ImageHandler.ashx_.jpg'),
+(2, 'The Great Gatsby (1925)', 'Romance', 'Francis Fitzgerald ', 4, 5, 4, 4, 'gatsby.jpg'),
+(3, 'Candide, ou l\'Optimisme', 'Philosophy, Satire', 'François-Marie Arouet', 4, 5, 4, 4, 'candide.jpg'),
+(4, 'The Catcher in the Rye', 'Coming of Age', 'J. D. Salinger', 2, 4, 3, 3, 'rye.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,7 +78,9 @@ INSERT INTO `games` (`ID`, `title`, `genre`, `main_story`, `gameplay`, `graphics
 (1, 'The witcher 3 - Wild hunt (2015)', 'Rpg, Fantasy, Sci-fi', 95, 80, 100, 95, 100, 90, 93, 'https://wildkonscia.tk/wp-content/uploads/2018/08/The_Witcher_3_Wild_Hunt_The_sirens_may_look_beautiful_in_the_water-but_once_they_re_out_of_it-they_change_into_deadly-flying_creatures..0.0.png-768x512.jpg'),
 (2, 'Assassin\'s Creed Odyssey (2018)', 'Rpg, Fantasy, Sci-fi', 100, 100, 100, 100, 100, 95, 99, 'https://d3fa68hw0m2vcc.cloudfront.net/a0b/203949224.jpeg'),
 (3, 'Battlefield 1 (2016)', 'FPS, Historical', 45, 100, 80, 60, 85, 36, 68, 'https://cdn.vox-cdn.com/thumbor/SyMgRJ1Lzrl5ql707jDzNbZ7SrM=/0x0:1920x1080/1200x800/filters:focal(807x387:1113x693)/cdn.vox-cdn.com/uploads/chorus_image/image/62270105/battlefield_1_no_mans_land_1920.0.jpg'),
-(4, 'Red Dead Redemption 2 PC (2019)', 'Action, Adventure', 92, 70, 100, 78, 94, 86, 87, 'rdr2.jpg');
+(4, 'Red Dead Redemption 2 PC (2019)', 'Action, Adventure', 92, 70, 100, 78, 94, 86, 87, 'rdr2.jpg'),
+(5, 'Far Cry 5 (2018)', 'Action, Adventure, FPS', 90, 95, 90, 95, 85, 70, 88, 'fc5.jpg'),
+(6, 'Quantum Break (2016)', 'Action, Adventure, TPS', 90, 70, 85, 80, 70, 80, 80, 'qbreak.jpg');
 
 -- --------------------------------------------------------
 
@@ -140,7 +144,20 @@ INSERT INTO `movies` (`ID`, `title`, `genre`, `seen`, `main_story`, `photography
 (33, 'Green Room (2015)', 'Mystery, Thriller', '2019-09-03', 32, 35, 61, 53, 62, 30, 46, 0, 'https://pmcvariety.files.wordpress.com/2016/04/greenroom.jpg?w=640'),
 (34, 'It Chapter Two (2019)', 'Drama, Comedy', '2019-09-08', 0, 20, 30, 80, 20, 40, 32, 0, 'https://www.indiewire.com/wp-content/uploads/2019/07/It-chapter-2-banner.jpg?w=780'),
 (35, 'Star Wars: The Rise of Skywalker (2019)', 'Action, Sci-fi', '2019-12-26', 40, 70, 30, 80, 85, 80, 64, 0, 'swix.jpg'),
-(36, '1917 (2019)', 'Drama', '2020-01-26', 75, 100, 90, 95, 95, 100, 93, 1, '1917.png');
+(36, '1917 (2019)', 'Drama', '2020-01-26', 75, 100, 90, 95, 95, 100, 93, 1, '1917.png'),
+(37, 'There Will be Blood (2007)', 'Drama', '2020-02-04', 94, 92, 87, 94, 100, 98, 94, 2, 'blood.jpg'),
+(38, 'Gokseong (2016)', 'Horror', '2020-02-03', 86, 80, 83, 95, 90, 87, 87, 2, 'wailing.jpg'),
+(39, 'Akmareul boatda (2010)', 'Drama, Thriller', '2020-02-05', 81, 82, 91, 100, 96, 88, 90, 2, 'isawthedevil.jpg'),
+(40, 'Volver (2006)', 'Drama', '2020-02-06', 91, 84, 87, 95, 93, 79, 88, 2, 'volver.jpg'),
+(41, 'Vivre sa vie (1962)', 'Nouvelle Vague, Drama', '2020-03-18', 75, 96, 97, 100, 96, 100, 94, 2, 'vivre_sa_vie.jpg'),
+(42, 'Belle Epoque (1992)', 'Comedy, Romance', '2020-03-24', 85, 93, 89, 98, 100, 80, 91, 2, 'belleepoque.jpg'),
+(43, 'Belle de Jour (1963)', 'Drama', '2020-03-25', 24, 72, 54, 83, 90, 70, 66, 0, 'belle_de_jour.jpg'),
+(44, 'Le mépris (1963)', 'Nouvelle Vague, Drama', '2020-03-23', 86, 100, 94, 100, 100, 83, 94, 2, 'lemepris.jpg'),
+(45, 'The Third Man (1949)', 'Crime, Drama', '2020-03-28', 60, 100, 70, 85, 88, 99, 82, 1, 'thethirdman.jpg'),
+(46, 'Dial M for Murder (1954)', 'Mystery, Thriller', '2020-03-29', 50, 80, 80, 84, 96, 75, 78, 1, 'dial_m_for_murder.jpg'),
+(47, 'Hable con Ella (2002)', 'Drama', '2020-03-20', 100, 93, 97, 100, 100, 96, 98, 2, 'hableconella.jpg'),
+(48, 'Dolor y Glória', 'Drama', '2020-03-20', 78, 98, 82, 89, 79, 85, 85, 1, 'dolorygloria.jpg'),
+(49, 'M (1931)', 'Crime, Drama, Thriller', '2020-03-15', 80, 92, 96, 89, 100, 70, 89, 2, 'm.jpg');
 
 -- --------------------------------------------------------
 
@@ -175,7 +192,9 @@ INSERT INTO `tv_shows` (`ID`, `title`, `genre`, `seen`, `main_story`, `photograp
 (5, 'Bojack Horseman - Season 5 (2018)', 'Sitcom', '2019-08-16', 70, 70, 80, 90, 90, 75, 79, 'https://www.syfy.com/sites/syfy/files/styles/1200x680/public/syfywire_blog_post/2018/09/bojack-season-5.png'),
 (6, 'Paradise PD - Season 1 (2018)', 'Comedy', '2019-08-14', 75, 70, 72, 85, 87, 70, 77, 'https://www.whats-on-netflix.com/wp-content/uploads/2018/09/paradise-pd-season-2-netflix.jpg'),
 (7, 'MindHunter - Season 2 (2019)', 'Drama, Thriller', '2019-08-28', 85, 85, 86, 85, 99, 75, 86, 'https://media.buzz.ie/uploads/2019/07/19111128/mindhunter-season-2-8-1563380738.jpg'),
-(8, 'The Society', 'Drama', '2019-09-07', 42, 32, 78, 32, 10, 61, 43, 'https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/05/TheSociety_105_Unit_00199R-920x584.jpg');
+(8, 'The Society (2019)', 'Drama', '2019-09-07', 42, 32, 78, 32, 10, 61, 43, 'https://ksassets.timeincuk.net/wp/uploads/sites/55/2019/05/TheSociety_105_Unit_00199R-920x584.jpg'),
+(9, 'True Detective - Season 1 (2014)', 'Philosophy', '2020-02-17', 92, 90, 91, 94, 100, 85, 92, 'truedetective.jpg'),
+(10, 'True Detective - Season 3 (2019)', 'Crime', '2020-03-31', 59, 88, 70, 85, 81, 62, 74, 'truedetective3.jpg');
 
 --
 -- Indexes for dumped tables
@@ -213,25 +232,25 @@ ALTER TABLE `tv_shows`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `tv_shows`
 --
 ALTER TABLE `tv_shows`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
